@@ -60,9 +60,10 @@ import os
 import pyjokes
 import random
 
-from audioFunctions import TextToSpeechGoogle, playAudio, TextToSpeechOffline, SpeechToText
+from audioFunctions import TextToSpeechGoogle, playAudio, TextToSpeechOffline, SpeechToText, TexttoSpeech
 from wakeWordDetection import wakeWordDetect
 from internetCheck import internet_available
+from aihandler import *
 
 
 
@@ -72,20 +73,12 @@ from internetCheck import internet_available
 #This function greets the user
 def greet():
     greetSpeech = "Initialising JARVIS"
-    if(internet_available()):
-        TextToSpeechGoogle(greetSpeech)
-    else:
-        TextToSpeechOffline(greetSpeech)
-    playAudio()
+    TexttoSpeech(greetSpeech)
 
 def acknowledgeListening():
     acknowledgeSpeeches = ["Yes sir","Ya","Yes my lord","Hmm"]
     acknowledgeSpeech = random.choice(acknowledgeSpeeches)
-    if(internet_available()):
-        TextToSpeechGoogle(acknowledgeSpeech)
-    else:
-        TextToSpeechOffline(acknowledgeSpeech)
-    playAudio()
+    TexttoSpeech(acknowledgeSpeech)
 
 greet()
 
@@ -94,5 +87,8 @@ while(True):
     acknowledgeListening()
     userSpeech = SpeechToText()
     if(userSpeech!=""):
-        pass
+        reply = get_ai_response(userSpeech)
+        print(reply)
+        TexttoSpeech(reply)
+
     

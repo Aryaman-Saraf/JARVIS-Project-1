@@ -7,6 +7,12 @@ import pyttsx3
 import speech_recognition as sr
 from internetCheck import internet_available
 
+def TexttoSpeech(text):
+    if(internet_available()):
+        TextToSpeechGoogle(text)
+    else:
+        TextToSpeechOffline(text)
+    playAudio()
 
 def TextToSpeechGoogle(text):
     tts = gTTS(text,lang="en")
@@ -32,6 +38,8 @@ def TextToSpeechOffline(text):
     engine.runAndWait()
     engine.stop()
 
+
+#This Function is used to convert User Speech to Text
 def SpeechToText():
     r = sr.Recognizer()
     mic = sr.Microphone()
@@ -68,6 +76,8 @@ def SpeechToText():
                 raise Exception("Empty recognition result")
             print(f"You said: {text}")
             return text
+        
+
     except sr.UnknownValueError:
         print("Could not understand audio")
         speech = "Sorry, I didn't catch that"
@@ -77,6 +87,8 @@ def SpeechToText():
             TextToSpeechOffline(speech)
         playAudio()
         return ""
+    
+
     except sr.RequestError as e:
         print(f"Recognition service error: {e}")
         speech = "Recognition service unavailable"
@@ -86,6 +98,8 @@ def SpeechToText():
             TextToSpeechOffline(speech)
         playAudio()
         return ""
+    
+
     except Exception as e:
         print(f"Error: {e}")
         speech = "No Command Received"
