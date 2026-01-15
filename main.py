@@ -58,20 +58,13 @@ import pygame
 import pyttsx3
 import os
 import pyjokes
+import random
 
-from audioFunctions import TextToSpeechGoogle, playAudio, TextToSpeechOffline
+from audioFunctions import TextToSpeechGoogle, playAudio, TextToSpeechOffline, SpeechToText
+from wakeWordDetection import wakeWordDetect
+from internetCheck import internet_available
 
-#This Function is Used to Check if the device if connected to the internet or not
-def internet_available():
-    try:
-        socket.create_connection(("8.8.8.8", 53), timeout=2)
-        return True
-    except OSError:
-        try:
-            requests.get("https://www.google.com", timeout=2)
-            return True
-        except requests.ConnectionError:
-            return False
+
 
 #This Function is used to convert from text to speech using Google's gTTS - Used if device connected to Internet
 
@@ -85,7 +78,21 @@ def greet():
         TextToSpeechOffline(greetSpeech)
     playAudio()
 
+def acknowledgeListening():
+    acknowledgeSpeeches = ["Yes sir","Ya","Yes my lord","Hmm"]
+    acknowledgeSpeech = random.choice(acknowledgeSpeeches)
+    if(internet_available()):
+        TextToSpeechGoogle(acknowledgeSpeech)
+    else:
+        TextToSpeechOffline(acknowledgeSpeech)
+    playAudio()
+
 greet()
 
 while(True):
-    pass
+    wakeWordDetect()
+    acknowledgeListening()
+    userSpeech = SpeechToText()
+    if(userSpeech!=""):
+        pass
+    
