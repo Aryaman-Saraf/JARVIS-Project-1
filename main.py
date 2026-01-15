@@ -47,3 +47,45 @@ LIBRARIES USED
 • gTTS
 • pygame
 • os'''
+
+
+
+import speech_recognition as sr
+import socket
+import requests
+from gtts import gTTS
+import pygame
+import pyttsx3
+import os
+import pyjokes
+
+from audioFunctions import TextToSpeechGoogle, playAudio, TextToSpeechOffline
+
+#This Function is Used to Check if the device if connected to the internet or not
+def internet_available():
+    try:
+        socket.create_connection(("8.8.8.8", 53), timeout=2)
+        return True
+    except OSError:
+        try:
+            requests.get("https://www.google.com", timeout=2)
+            return True
+        except requests.ConnectionError:
+            return False
+
+#This Function is used to convert from text to speech using Google's gTTS - Used if device connected to Internet
+
+
+#This function greets the user
+def greet():
+    greetSpeech = "Initialising JARVIS"
+    if(internet_available()):
+        TextToSpeechGoogle(greetSpeech)
+    else:
+        TextToSpeechOffline(greetSpeech)
+    playAudio()
+
+greet()
+
+while(True):
+    pass
