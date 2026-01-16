@@ -19,3 +19,6 @@ __pycache__/
 
 #Audio files
 output.mp3
+
+#Text files
+READme.txt
