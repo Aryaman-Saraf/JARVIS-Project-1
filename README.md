@@ -2,7 +2,7 @@
 ### AI-Powered Voice Assistant (Python + Gemini API)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python" />
+  <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/AI-Google%20Gemini-orange" />
   <img src="https://img.shields.io/badge/Voice%20Assistant-Background%20Service-green" />
   <img src="https://img.shields.io/github/stars/Aryaman-Saraf/JARVIS-Project-1?style=social" />
@@ -17,6 +17,19 @@
 It listens for a wake word, processes voice commands, and performs real-world actions such as opening applications, browsing the web, playing music, and delivering real-time news and weather updates — all powered by **Google Gemini AI**.
 
 This project demonstrates **systems programming, voice interfaces, API integration, and AI orchestration**.
+
+---
+
+## ⭐ Why This Project?
+
+Unlike basic chatbot projects, **PROJECT JARVIS**:
+- Runs continuously in the background
+- Uses real voice input (not text)
+- Performs real system actions
+- Integrates AI with OS-level automation
+- Is built with a clean, modular architecture
+
+If you’re interested in **AI assistants, systems programming, or voice interfaces**, this project is for you.
 
 ---
 
@@ -50,23 +63,15 @@ This project demonstrates **systems programming, voice interfaces, API integrati
 
 ## 🎬 Demo
 
-> ⚠️ *Add your demo GIF here after recording*
+> 🚧 **Demo coming soon**
+>
+> A short demo showcasing wake word detection, application automation, news, weather queries, and AI responses will be added shortly.
 
-```md
-![JARVIS Demo](assets/jarvis-demo.gif)
-📌 Suggested demo ideas
+---
 
-Saying wake word → “Open Chrome”
+## 📂 Project Architecture
 
-Asking for news
-
-Asking for weather
-
-AI conversation response
-
-📂 Project Architecture
-text
-Copy code
+```text
 JARVIS-Project-1/
 │
 ├── main.py                 # Application entry point
@@ -77,89 +82,78 @@ JARVIS-Project-1/
 ├── news.py                 # News API integration
 ├── requirements.txt        # Dependencies
 └── README.md               # Documentation
+
+
 ⚙️ Installation
 1️⃣ Clone Repository
-bash
-Copy code
 git clone https://github.com/Aryaman-Saraf/JARVIS-Project-1.git
 cd JARVIS-Project-1
+
 2️⃣ Setup Virtual Environment
-bash
-Copy code
 python -m venv venv
 source venv/bin/activate      # macOS/Linux
 venv\Scripts\activate         # Windows
-3️⃣ Install Dependencies
-bash
-Copy code
-pip install -r requirements.txt
-🔑 Environment Configuration
-Set your Gemini API Key:
 
-bash
-Copy code
+3️⃣ Install Dependencies
+pip install -r requirements.txt
+
+🔑 Environment Configuration
+
+Set your Gemini API Key:
 export GEMINI_API_KEY="your_api_key_here"
+
+
 Windows
 
-bash
-Copy code
 set GEMINI_API_KEY=your_api_key_here
+
 ▶️ Running the Assistant
-bash
-Copy code
 python main.py
-🗣️ Example Commands:
+
+🗣️ Example Commands
 
 “Open Chrome”
-
 “Play music”
-
 “Tell me today’s news”
-
 “What’s the weather?”
 
-🧪 Skills Demonstrated (Resume-Ready)
-✔️ Voice Interface Engineering
+🧪 Skills Demonstrated 
 
-✔️ AI Integration (LLM APIs)
-
-✔️ Real-Time Event Handling
-
-✔️ System Automation
-
-✔️ Modular Python Architecture
-
-✔️ Audio Processing
-
-✔️ Background Services
+Voice Interface Engineering
+AI Integration using Large Language Models (Gemini API)
+Real-Time Audio Processing
+Event-Driven Programming
+Background Services & Automation
+API Integration (News & Weather)
+Modular Python Architecture
+System Interaction & OS Automation
 
 🔮 Future Roadmap
+
 GUI Dashboard
-
 Multi-language support
-
 Custom wake words
-
 Persistent conversation memory
-
 OS-level automation (screenshots, shutdown, etc.)
 
 👨‍💻 Author
+
 Aryaman Saraf
-Python Developer | AI Enthusiast | Systems Builder
+Python Developer | AI Enthusiast
 
 🔗 GitHub: https://github.com/Aryaman-Saraf
 
 ⭐ Support
+
 If you find this project useful:
-
 🌟 Star the repository
-
 🍴 Fork it
-
 🐛 Open issues
-
 📢 Share feedback
 
+---
+
 📜 License
+
 This project is released for educational and personal use.
+⭐ If this project helped or inspired you, consider giving it a star!
